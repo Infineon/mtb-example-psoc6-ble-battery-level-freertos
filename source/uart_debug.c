@@ -7,19 +7,19 @@
 * Related Document: See README.md
 *
 *******************************************************************************
-* Copyright (2019), Cypress Semiconductor Corporation. All rights reserved.
+* (c) 2019-2020, Cypress Semiconductor Corporation. All rights reserved.
 *******************************************************************************
 * This software, including source code, documentation and related materials
-* (“Software”), is owned by Cypress Semiconductor Corporation or one of its
-* subsidiaries (“Cypress”) and is protected by and subject to worldwide patent
+* ("Software"), is owned by Cypress Semiconductor Corporation or one of its
+* subsidiaries ("Cypress") and is protected by and subject to worldwide patent
 * protection (United States and foreign), United States copyright laws and
 * international treaty provisions. Therefore, you may use this Software only
 * as provided in the license agreement accompanying the software package from
-* which you obtained this Software (“EULA”).
+* which you obtained this Software ("EULA").
 *
-* If no EULA applies, Cypress hereby grants you a personal, nonexclusive,
+* If no EULA applies, Cypress hereby grants you a personal, non-exclusive,
 * non-transferable license to copy, modify, and compile the Software source
-* code solely for use in connection with Cypress’s integrated circuit products.
+* code solely for use in connection with Cypress's integrated circuit products.
 * Any reproduction, modification, translation, compilation, or representation
 * of this Software except as specified above is prohibited without the express
 * written permission of Cypress.
@@ -32,12 +32,11 @@
 * Software or any product or circuit described in the Software. Cypress does
 * not authorize its products for use in any products where a malfunction or
 * failure of the Cypress product may reasonably be expected to result in
-* significant property damage, injury or death (“High Risk Product”). By
-* including Cypress’s product in a High Risk Product, the manufacturer of such
+* significant property damage, injury or death ("High Risk Product"). By
+* including Cypress's product in a High Risk Product, the manufacturer of such
 * system or application assumes all risk of such use and in doing so agrees to
 * indemnify Cypress against all liability.
 *******************************************************************************/
-
 
 /*******************************************************************************
  * Include header files
@@ -48,7 +47,6 @@
 #include "task.h"
 #include "queue.h"
 #include "uart_debug.h"
-
 
 /*******************************************************************************
  * Macros
@@ -69,7 +67,7 @@ typedef struct
 {
     const char* str_ptr;
     debug_message_type_t message_type;
-} debug_messaage_data_t;
+} debug_message_data_t;
 
 
 /*******************************************************************************
@@ -84,7 +82,7 @@ typedef struct
 *******************************************************************************/
 void task_debug(void* param)
 {
-    debug_messaage_data_t message_data;
+    debug_message_data_t message_data;
 
     /* Variable used to store the return values of RTOS APIs */
     BaseType_t rtos_api_result;
@@ -150,7 +148,7 @@ void task_debug(void* param)
 *******************************************************************************/
 void task_debug_printf(debug_message_type_t message_type, char* str_ptr, ...)
 {
-    debug_messaage_data_t message_data;
+    debug_message_data_t message_data;
     char* message_buffer;
     char* task_name;
     uint32_t length = 0;
@@ -202,7 +200,7 @@ void task_debug_printf(debug_message_type_t message_type, char* str_ptr, ...)
 void task_debug_init(void)
 {
     debug_message_q = xQueueCreate(DEBUG_QUEUE_SIZE,
-                                   sizeof(debug_messaage_data_t));
+                                   sizeof(debug_message_data_t));
 
     xTaskCreate(task_debug, "Debug Task", configMINIMAL_STACK_SIZE,
                 NULL, (tskIDLE_PRIORITY + 1u), NULL);

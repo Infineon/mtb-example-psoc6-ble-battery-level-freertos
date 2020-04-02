@@ -1,25 +1,13 @@
 /******************************************************************************
 * File Name: main.c
 *
-* Description: This code example demonstrates the implementation of a BLE
-*              Battery Service using PSoC 6 MCU with Bluetooth Low Energy (BLE)
-*              Connectivity. Battery level  is simulated in the firmware; its
-*              value changes continuously from 0 to 100 percent. The design uses
-*              an LED for indication (OFF, flashing, or ON for no device
-*              connected, advertising, or connected respectively).
-*
-*              The code example uses the Cypress PSoC 6 Bluetooth Low Energy
-*              Middleware. See https://cypresssemiconductorco.github.io/bless/ble_api_reference_manual/html/index.html
-*              for more details on middleware.
-*
-*              This code example uses FreeRTOS. Visit the FreeRTOS website
-*              (https://www.freertos.org) for documentation and API references
-*              of FreeRTOS.
+* Description: This is the source code for the PSoC 6 MCU with BLE 
+*              Connectivity: Battery Level (FreeRTOS) Example for ModusToolbox.
 *
 * Related Document: See README.md
 *
 *******************************************************************************
-* Copyright (2019), Cypress Semiconductor Corporation. All rights reserved.
+* (c) 2019-2020, Cypress Semiconductor Corporation. All rights reserved.
 *******************************************************************************
 * This software, including source code, documentation and related materials
 * ("Software"), is owned by Cypress Semiconductor Corporation or one of its
@@ -27,7 +15,7 @@
 * protection (United States and foreign), United States copyright laws and
 * international treaty provisions. Therefore, you may use this Software only
 * as provided in the license agreement accompanying the software package from
-* which you obtained this Software ("EULA").
+* which you obtained this Software ("EULA").
 *
 * If no EULA applies, Cypress hereby grants you a personal, non-exclusive,
 * non-transferable license to copy, modify, and compile the Software source
@@ -50,7 +38,6 @@
 * indemnify Cypress against all liability.
 *******************************************************************************/
 
-
 /*******************************************************************************
  * Header files
  ******************************************************************************/
@@ -64,7 +51,6 @@
 #include "battery_task.h"
 #include "status_led_task.h"
 #include "uart_debug.h"
-
 
 /*******************************************************************************
 * Macros
@@ -92,12 +78,11 @@
 #define BLE_QUEUE_LENGTH            (10u)
 #define STATUS_LED_QUEUE_LENGTH     (1u)
 
-
 /*******************************************************************************
 * Function Name: main
 ********************************************************************************
 * Summary:
-*  This is the main function for CM4 CPU. This function creates required queus,
+*  This is the main function for CM4 CPU. This function creates required queues,
 *  sets up user tasks and then starts the RTOS scheduler.
 *
 * Return:

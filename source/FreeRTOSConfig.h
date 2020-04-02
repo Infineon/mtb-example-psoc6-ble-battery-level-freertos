@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Cypress Semiconductor Corporation. or a subsidiary of
+ * Copyright (C) 2019-2020 Cypress Semiconductor Corporation. or a subsidiary of
  * Cypress Semiconductor Corporation.  All Rights Reserved.
  *
  * Updated configuration to support PSoC 6 MCU.
@@ -75,7 +75,7 @@
 #define configUSE_TICK_HOOK                     0
 #define configCHECK_FOR_STACK_OVERFLOW          2
 #define configUSE_MALLOC_FAILED_HOOK            1 /* Changed to use memory
-													allocation failed hook */
+                                                    allocation failed hook */
 #define configUSE_DAEMON_TASK_STARTUP_HOOK      0
 
 /* Run time and task stats gathering related definitions. */

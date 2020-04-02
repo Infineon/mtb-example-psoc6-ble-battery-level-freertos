@@ -3,11 +3,11 @@
 # \version 1.0
 #
 # \brief
-# Top-level appication make file.
+# Top-level application make file.
 #
 ################################################################################
 # \copyright
-# Copyright 2018-2019 Cypress Semiconductor Corporation
+# Copyright 2018-2020 Cypress Semiconductor Corporation
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,6 +30,7 @@
 
 # Target board/hardware
 TARGET=CY8CKIT-062-BLE
+
 # Name of application (used to derive name of final linked file).
 APPNAME=mtb-example-psoc6-ble-battery-level-freertos
 
@@ -63,7 +64,7 @@ VERBOSE=
 #
 #    COMPONENTS=foo bar
 #
-# ... then code in directories named COMPONENT_foo and COMPONENT_bar will be 
+# ... then code in directories named COMPONENT_foo and COMPONENT_bar will be
 # added to the build
 #
 COMPONENTS+=BLESS_HOST BLESS_CONTROLLER
@@ -84,7 +85,7 @@ INCLUDES=
 # Add additional defines to the build process (without a leading -D).
 DEFINES=
 
-# Select softfp or hardfp floating point. Default is softfp. 
+# Select softfp or hardfp floating point. Default is softfp.
 VFP_SELECT=
 
 # Additional / custom C compiler flags.
@@ -130,11 +131,11 @@ POSTBUILD=
 # This controls where automatic source code discovery looks for code.
 CY_APP_PATH=
 
-# Relative path to the "base" library. It provides the core makefile build 
+# Relative path to the "base" library. It provides the core makefile build
 # infrastructure.
 CY_BASELIB_PATH=libs/psoc6make
 
-# Absolute path to the compiler's "bin" directory. 
+# Absolute path to the compiler's "bin" directory.
 #
 # The default depends on the selected TOOLCHAIN (GCC_ARM uses the ModusToolbox
 # IDE provided compiler by default).
