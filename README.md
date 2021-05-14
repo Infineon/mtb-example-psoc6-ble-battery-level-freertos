@@ -6,7 +6,7 @@ The battery level is simulated in the firmware and its value changes continuousl
 
 The USB-BLE dongle provided with the CY8CKIT-062-BLE Pioneer kit or an iOS/Android mobile device can act as the BLE Central device.  
 
-This code example uses FreeRTOS™. Visit the [FreeRTOS™ website](https://www.freertos.org/) for documentation and API references.
+This code example uses [FreeRTOS™ Version 10.0.1](https://github.com/cypresssemiconductorco/freertos/tree/release-v10.0.1). Visit the [FreeRTOS™ website](https://www.freertos.org/) for documentation and API references.
 
 ## Requirements
 
@@ -249,6 +249,7 @@ Document Title: CE225909 - PSoC 6 MCU with BLE Connectivity: Battery Level (Free
 | ------- | --------------------- |
 | 1.0.0   | New code example      |
 | 1.1.0   | Updated to support ModusToolbox software v2.1<br>Minor formatting changes to the code |
+| 1.2.0   | Updated to use FreeRTOS Version 10.0.1 |
 
 ------
 
